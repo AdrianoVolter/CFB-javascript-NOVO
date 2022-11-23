@@ -1,60 +1,59 @@
-class Carro{
-    constructor(p_nome, p_tipo){
+class Pessoa{
+    constructor(p_nome, p_idade){
         this.nome = p_nome
-        if(p_tipo == 1){
-            this.tipo = "Esportivo"
-            this.vel_max = 300
-        }else if(p_tipo == 2){
-            this.tipo = "Utilitario"
-            this.vel_max = 120
-        }else if(p_tipo == 3){
-            this.tipo = "Passeio"
-            this.vel_max = 100
-        }else{
-            this.tipo = "Military"
-            this.vel_max = 200
-        } 
+        this.idade = p_idade
+        
     }
     getNome(){
         return this.nome
     }
-    getTipo(){
-        return this.tipo
+    getIdade(){
+        return this.idade
     }
-    getVel(){
-        return this.vel_max
-    }
-
+    
     getInfo(){
-        return [this.nome, this.tipo, this.vel_max]
+        return [this.nome, this.idade]
     }
     //Setar a propriedade
     setNome(nome){
         this.nome = nome
     }
-    setTipo(tipo){
-        this.tipo = tipo
-    }
-    setVel(vel_max){
-        this.vel_max = vel_max
+    setIdade(idade){
+        this.idade = idade
     }
 
     info(){//Imprime todas as informações do Carro
         console.log("\n")
         console.log(`Nome: ${this.nome}`)
-        console.log(`Tipo: ${this.tipo}`)
-        console.log(`Velocidade: ${this.vel_max}`)
+        console.log(`Idade: ${this.idade}`)
         console.log("\n")
     }
 }
-//Cria os carros com as propriedades nome e tipo
-let c1 = new Carro("Ferrari",1)
-let c2 = new Carro()
-let c3 = new Carro()
-c1.setNome('Fusca') //setou o nome ferarri para fusca
-//c1.setTipo(2)
-//c1.setVel(150)
-c1.info()
-//c3.info()
 
-//console.log(c1.getInfo()[2])
+let pessoas = []
+
+const btn_add =  document.querySelector("#btn_add")
+const res =  document.querySelector(".res")
+
+const addPessoas = () => { 
+    pessoas.map((p)=>{
+        const div = document.createElement("div")
+        div.setAttribute("class","pessoa")
+        div.innerHTML = `Nome: ${p.getNome()}<br/>Idade: ${p.getIdade()}`
+        res.appendChild(div)
+    })
+}
+
+
+btn_add.addEventListener("click",(evt)=>{
+    const nome = document.querySelector("#f_nome")
+    const idade =  document.querySelector("#f_idade")
+    const p = new Pessoa(nome.value , idade.value)
+    pessoas.push(p)
+    nome.value = ""
+    idade.value = ""
+    nome.focus()
+    addPessoas()
+    console.log(pessoas)
+
+})
