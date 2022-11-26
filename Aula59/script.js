@@ -36,11 +36,13 @@ const btn_add =  document.querySelector("#btn_add")
 const res =  document.querySelector(".res")
 
 const addPessoas = () => { 
+    res.innerHTML =""
     pessoas.map((p)=>{
         const div = document.createElement("div")
         div.setAttribute("class","pessoa")
-        div.innerHTML = `Nome: ${p.getNome()}<br/>Idade: ${p.getIdade()}`
+        div.innerHTML = `Nome: ${p.getNome()}<br/>Idade: ${p.getIdade()}<br/>`
         res.appendChild(div)
+        
     })
 }
 
