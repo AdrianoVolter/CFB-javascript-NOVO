@@ -3,27 +3,27 @@ function Pessoa(p_nome, p_idade){
     this.nome = p_nome,
     this.idade = p_idade,
     
-    getNome = function(){
+    this.getNome = function(){
         return this.nome
-    }
-    getIdade = function(){
+    },
+    this.getIdade = function(){
         return this.idade
-    }
+    },
     
     //Setar a propriedade
-    setNome = function(nome){
+    this.setNome = function(nome){
         this.nome = nome
-    }
-    setIdade = function(idade){
+    },
+    this.setIdade = function(idade){
         this.idade = idade
-    }
+    },
 
-    info(){//Imprime todas as informações do Carro
+    this.info = ()=>{//Imprime todas as informações do Carro
         console.log("\n")
         console.log(`Nome: ${this.nome}`)
         console.log(`Idade: ${this.idade}`)
-        console.log("\n")
-    }
+        console.log("\n");
+    };
 }
 
 let pessoas = []
