@@ -1,12 +1,19 @@
 const f_tipoMilitar = document.querySelector("#f_tipoMilitar")
 const f_tipoNormal = document.querySelector("#f_tipoNormal")
-let tipo = f_tipoMilitar
-console.log(tipo)
+const f_blindagem = document.querySelector("#f_blindagem")
+const f_municao = document.querySelector("#f_municao")
 
-tipo.addEventListener("click",(evt)=>{
+
+f_tipoMilitar.addEventListener("click",(evt)=>{
+    f_blindagem.removeAttribute("disabled")
+    f_municao.removeAttribute("disabled")
     console.log("Radio funcionando!")
 })
 f_tipoNormal.addEventListener("click",(evt)=>{
+    f_blindagem.value= 0
+    f_municao.value= 0
+    f_blindagem.setAttribute("disabled", "disabled")
+    f_municao.setAttribute("desabled", "disabled")
     console.log("Radio funcionando!")
 })
 
