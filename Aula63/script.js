@@ -2,13 +2,19 @@ const f_tipoMilitar = document.querySelector("#f_tipoMilitar")
 const f_tipoNormal = document.querySelector("#f_tipoNormal")
 const f_blindagem = document.querySelector("#f_blindagem")
 const f_municao = document.querySelector("#f_municao")
+const carros = document.querySelector("#carros")
+const btn_addCarro = document.querySelector("#btn_addCarro")
 
 
+let a_carros = []
+
+//Quando escolher o carro militar
 f_tipoMilitar.addEventListener("click",(evt)=>{
     f_blindagem.removeAttribute("disabled")
     f_municao.removeAttribute("disabled")
     console.log("Radio funcionando!")
 })
+//Quando escolher carro normal
 f_tipoNormal.addEventListener("click",(evt)=>{
     f_blindagem.value= 0
     f_municao.value= 0
@@ -16,7 +22,26 @@ f_tipoNormal.addEventListener("click",(evt)=>{
     f_municao.setAttribute("desabled", "disabled")
     console.log("Radio funcionando!")
 })
+//Gerencia os carros para colocar no html
+const gerenciarCarros = ()=>{
+    carros.innerHTML = ""
+    a_carros.forEach((c)=>{
+        const div = document.createElement("div")
+        div.setAttribute("class", "carro")
+        div.innerHTML = c.nome
+        carros.appendChild(div)
+    })   
+}
 
+btn_addCarro.addEventListener("click",(evt)=>{
+    gerenciarCarros()
+    console.log()
+})
+
+
+
+
+//Classe cria os carros 
 class Carro {  // Classe PAI
     constructor(nome, portas){
         this.nome = nome
