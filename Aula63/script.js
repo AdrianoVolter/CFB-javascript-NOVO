@@ -4,7 +4,8 @@ const f_blindagem = document.querySelector("#f_blindagem")
 const f_municao = document.querySelector("#f_municao")
 const carros = document.querySelector("#carros")
 const btn_addCarro = document.querySelector("#btn_addCarro")
-
+const f_nome =  document.querySelector("#f_nome")
+const f_portas = document.querySelector("#f_portas")
 
 let a_carros = []
 
@@ -19,11 +20,11 @@ f_tipoNormal.addEventListener("click",(evt)=>{
     f_blindagem.value= 0
     f_municao.value= 0
     f_blindagem.setAttribute("disabled", "disabled")
-    f_municao.setAttribute("desabled", "disabled")
+    f_municao.setAttribute("disabled", "disabled")
     console.log("Radio funcionando!")
 })
 //Gerencia os carros para colocar no html
-const gerenciarCarros = ()=>{
+const gerenciarCarros=()=>{
     carros.innerHTML = ""
     a_carros.forEach((c)=>{
         const div = document.createElement("div")
@@ -34,12 +35,15 @@ const gerenciarCarros = ()=>{
 }
 
 btn_addCarro.addEventListener("click",(evt)=>{
+    if(f_tipoNormal.checked){
+        const c = new Carro(f_nome.value, f_portas.value)
+        a_carros.push(c)
+    }
+
     gerenciarCarros()
-    console.log()
+    //console.log(div)
+    
 })
-
-
-
 
 //Classe cria os carros 
 class Carro {  // Classe PAI
