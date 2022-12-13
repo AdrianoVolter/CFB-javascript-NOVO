@@ -15,7 +15,7 @@ f_tipoMilitar.addEventListener("click", (evt) => {
     // f_portas = 0 
     f_blindagem.removeAttribute("disabled")
     f_municao.removeAttribute("disabled")
-    console.log("Radio funcionando!")
+    //console.log("Radio funcionando!")
 })
 //Quando escolher carro normal
 f_tipoNormal.addEventListener("click", (evt) => {
@@ -25,7 +25,7 @@ f_tipoNormal.addEventListener("click", (evt) => {
     f_municao.value = 0
     f_blindagem.setAttribute("disabled", "disabled")
     f_municao.setAttribute("disabled", "disabled")
-    console.log("Radio funcionando!")
+    //console.log("Radio funcionando!")
 })
 //Gerencia os carros para colocar no html
 const gerenciarCarros = () => {
