@@ -17,13 +17,21 @@
 
 
 .carro {
+    flex-direction: column;
     border: 3px solid #008;
     background-color: #8cf;
     padding: 5px;
     border-radius: 5px;
     display: flex;
-    width: 200px;
+    width: 200px;  
+}
 
+.carro button{
+    cursor: pointer;
+    background-color: crimson;
+    border-radius: 5px;
+    color: #fff;
+    
 }
 
 .campoForm {

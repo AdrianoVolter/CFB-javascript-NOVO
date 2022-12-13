@@ -32,14 +32,17 @@ const gerenciarCarros = () => {
     carros.innerHTML = ""
     a_carros.forEach((c) => {
         const div = document.createElement("div")
+        const btn = document.createElement("button")
+        btn.innerHTML = `Remover`
         div.setAttribute("class", "carro")
         div.innerHTML = `Nome: ${c.nome}<br> `
         div.innerHTML += `Portas: ${c.portas}<br>`
         div.innerHTML += `Bindagem: ${c.blindagem}<br>`
-        div.innerHTML += `Minição: ${c.municao}<br>`
-        div.innerHTML += `Cor: ${c.cor}<br>`
+        div.innerHTML += `Munição: ${c.municao}<br>`
+        div.innerHTML += `Cor: ${c.cor}<br><br>`
         
         carros.appendChild(div)
+        div.appendChild(btn)
     })
 }
 

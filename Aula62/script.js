@@ -1,3 +1,16 @@
+// Pegar o input do tipo radio que foi selecionado
+const f_tipoMilitar = document.querySelector("#f_tipoMilitar")
+const f_tipoNormal = document.querySelector("#f_tipoNormal")
+let tipo = f_tipoMilitar
+console.log(tipo)
+
+tipo.addEventListener("click",(evt)=>{
+    console.log("Radio funcionando!")
+})
+f_tipoNormal.addEventListener("click",(evt)=>{
+    console.log("Radio funcionando!")
+})
+
 class Carro {  // Classe PAI
     constructor(nome, portas){
         this.nome = nome
