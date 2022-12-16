@@ -9,6 +9,14 @@ const f_portas = document.querySelector("#f_portas")
 
 let a_carros = []
 
+const removerCarro = (quem) => {
+    a_carros.filter((el) => {
+        return el.nome != quem
+        
+    })
+    //console.log(el)
+}
+
 //Quando escolher o carro militar
 f_tipoMilitar.addEventListener("click", (evt) => {
     // f_nome = ""
@@ -34,7 +42,14 @@ const gerenciarCarros = () => {
         const div = document.createElement("div")
         const btn = document.createElement("button")
         btn.innerHTML = `Remover`
+        btn.addEventListener("click",(evt) =>{
+            const removerQuem = evt.target.parentNode.dataset.nome
+            removerCarro(removerQuem)
+            console.log(removerQuem)
+            gerenciarCarros()
+        })
         div.setAttribute("class", "carro")
+        div.setAttribute("data-nome", c.nome)
         div.innerHTML = `Nome: ${c.nome}<br> `
         div.innerHTML += `Portas: ${c.portas}<br>`
         div.innerHTML += `Bindagem: ${c.blindagem}<br>`
@@ -43,6 +58,7 @@ const gerenciarCarros = () => {
         
         carros.appendChild(div)
         div.appendChild(btn)
+
     })
 }
 
@@ -103,23 +119,23 @@ class Militar extends Carro { //Classe filho
 // c1.ligar()
 // c1.setCor("Preto")
 
-c.atirar()
-c.atirar()
-c.atirar()
-c.atirar()
-c.atirar()
-c.atirar()
+// c.atirar()
+// c.atirar()
+// c.atirar()
+// c.atirar()
+// c.atirar()
+// c.atirar()
 
-console.log(`\nNome do carro: ${c.nome}`)
-console.log(`Quant. de portas: ${c.portas}`)
-console.log(`Ligado: ${(c.ligado ? "Sim" : "Não")}`)
-console.log(`Cor do carro: ${c.cor}\n\n`)
+// console.log(`\nNome do carro: ${c.nome}`)
+// console.log(`Quant. de portas: ${c.portas}`)
+// console.log(`Ligado: ${(c.ligado ? "Sim" : "Não")}`)
+// console.log(`Cor do carro: ${c.cor}\n\n`)
 
 
 
-console.log(`\nNome do carro: ${c.nome}`)
-console.log(`Quant. de portas: ${c.portas}`)
-console.log(`Blindagem: ${c.blindagem}`)
-console.log(`Munição: ${c.municao}`)
-console.log(`Ligado: ${(c.ligado ? "Sim" : "Não")}`)
-console.log(`Cor do carro: ${c.cor}\n\n`)
+// console.log(`\nNome do carro: ${c.nome}`)
+// console.log(`Quant. de portas: ${c.portas}`)
+// console.log(`Blindagem: ${c.blindagem}`)
+// console.log(`Munição: ${c.municao}`)
+// console.log(`Ligado: ${(c.ligado ? "Sim" : "Não")}`)
+// console.log(`Cor do carro: ${c.cor}\n\n`)
