@@ -10,11 +10,11 @@ const f_portas = document.querySelector("#f_portas")
 let a_carros = []
 
 const removerCarro = (quem) => {
-    a_carros.filter((el) => {
+   a_carros = a_carros.filter((el) => {
         return el.nome != quem
-        
+         
     })
-    //console.log(el)
+   console.log(a_carros)
 }
 
 //Quando escolher o carro militar
