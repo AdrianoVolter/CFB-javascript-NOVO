@@ -1,17 +1,10 @@
-// import { cursos,getCurso } from "./app.js";
-import * as m_cursos from "./app.js";
+import Cursos from "./app.js";
 
 
 
+Cursos.addCurso("c++")
+console.log("Servidor rodando")
+// 
 
-
-
-console.log(m_cursos.cursos)
-
-
-
-
-
-// console.log("Servidor rodando")
-// console.log(getTodosCursos())
+console.log(Cursos.getTodosCursos())
 // console.log(getCurso(0))

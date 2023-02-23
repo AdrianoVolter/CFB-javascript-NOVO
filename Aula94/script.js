@@ -1,11 +1,6 @@
 // import { cursos,getCurso } from "./app.js";
 import * as m_cursos from "./app.js";
 
-
-
-
-
-
 console.log(m_cursos.cursos)
 
 
