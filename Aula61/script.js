@@ -20,10 +20,11 @@ const btn_add = document.querySelector('#btn_add')
 const res = document.querySelector('.res')
 
 const addPessoa=()=>{    
-    const div=document.createElement('div')
-    div.setAttribute('class', 'pessoa')          
-    div.innerHTML=`Nome: ${Pessoa.getNome()} <br>Idade: ${Pessoa.getIdade()}`
-    res.appendChild(div) 
+    const td=document.createElement('td')
+    td.setAttribute('class', 'pessoa')          
+    td.innerHTML=`<td>${Pessoa.getNome()}</td>`
+    td.innerHTML+=`<td> ${Pessoa.getIdade()}</td>`
+    res.appendChild(td) 
 }    
 
 btn_add.addEventListener('click', ()=>{
